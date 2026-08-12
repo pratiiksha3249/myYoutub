@@ -1,0 +1,29 @@
+import express from "express";
+import connectDB from "./db/index.js";
+
+const app = express();
+
+connectDB()
+  .then(() => {
+    app.listen(process.env.PORT, () => {
+      console.log(`App is listening on port ${process.env.PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.log("Database connection failed:", error);
+  });
+
+//----------------------alternative-----------------------
+
+/*
+let PORT = process.env.PORT;
+
+function appListen(){
+      console.log(`App is listening on port ${process.env.PORT}`);
+}
+
+connectDB();
+
+app.listen(PORT,appListen())
+
+*/

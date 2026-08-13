@@ -1,11 +1,13 @@
+//here database is imported and used.....
 import express from "express";
 import connectDB from "./db/index.js";
 
 const app = express();
 
+
 connectDB()
   .then(() => {
-    app.listen(process.env.PORT, () => {
+    app.listen(process.env.PORT || 8000, () => {
       console.log(`App is listening on port ${process.env.PORT}`);
     });
   })

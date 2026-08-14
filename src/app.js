@@ -20,6 +20,16 @@ app.use(express.json({limit:"16kb"}))
 app.use(express.urlencoded({extended:true,limit:"16kb"}))
 //if we want to store the images or pdf in our local storage , we already created public folder,every one can access that img,pdf
 app.use(express.static("public"))
-application.use(cookieParser())
+app.use(cookieParser())
+
+//routes import
+import userRouter from "./routes/user.routes.js"
+
+
+//routes declaration
+//consa bhi user ne /users type krega to control jayega userRouter ke pass
+app.use("/api/v1/users",userRouter)
+
+
 
 export {app}

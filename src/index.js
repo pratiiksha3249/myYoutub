@@ -1,8 +1,7 @@
 //here database is imported and used.....
 import express from "express";
 import connectDB from "./db/index.js";
-
-const app = express();
+import {app} from "./app.js"
 
 
 connectDB()
@@ -14,6 +13,8 @@ connectDB()
   .catch((error) => {
     console.log("Database connection failed:", error);
   });
+
+
 
 //----------------------alternative-----------------------
 

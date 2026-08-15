@@ -9,9 +9,10 @@ const registerUser = asyncHandler(async (req, res) => {
 
     // 1. Get user details from req.body
     const { fullName, email, username, password } = req.body;
-
-    console.log("BODY:", req.body);
-    console.log("FILES:", req.files);
+    console.log(fullName, email, username, password)
+    // console.log("BODY:", req.body);
+    // console.log("FILES:", req.files);
+    console.log("came here first")
 
 
     // 2. Check required fields
@@ -77,6 +78,8 @@ const registerUser = asyncHandler(async (req, res) => {
         password,
         username: username.toLowerCase()
     });
+
+    console.log("user registered", user)
 
 
     // 10. Get created user without password and refreshToken

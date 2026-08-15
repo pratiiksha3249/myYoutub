@@ -1,6 +1,7 @@
 import { v2 as cloudinary } from "cloudinary";
 import fs from "fs"
 
+
 //this is used for file upload
 //client send file,pdf,img then multer take this and send to cloudinary
 cloudinary.config({
